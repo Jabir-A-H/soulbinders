@@ -1,2 +1,3 @@
-# soulbinders
-A gerne fusing monster battling game
+# Soulbinders
+
+A genre-fusing monster battling game
