@@ -1,53 +1,126 @@
 # Soulbinders
 
 **prototype plan** for the **Modern-Fantasy Wild Frontier RPG**.
-with *RDR2 countryside vibes* + *Ghost of Tsushima scenery* + *Souls-like creature battles* + *Pokémon-style catching/training*.
+with *Metroidvania* + *RDR2 countryside vibes* + *Ghost of Tsushima scenery* + *Souls-like creature battles* + *Pokémon-style catching/training*.
 
 ---
 
-## **1. Prototype Scope (What We’re Making First)**
+## 1. Prototype Scope (What We’re Making First)
 
-Goal: A **small but complete gameplay loop** in one rural area with:
+Create **a single countryside region** with exploration, Souls-like combat, creature catching, and one boss — enough to show off the core gameplay loop and world vibe.
 
-* **Exploration**: Walk, parkour, stealth.
-* **Creature Encounters**: Souls-like real-time battles.
-* **Catching & Training**: Basic system to store creatures.
-* **Hub Area**: Small settlement with NPCs.
-* **Quests**: 1–2 short story tasks.
+## 2. Core Features to Implement
 
----
+A **small but complete gameplay loop** in one rural area with:
 
-## **2. World Setting for Prototype**
+### A. Player Movement & Exploration
 
-* **The Hub** – A **small frontier village/outpost**
-  * Wooden buildings, barns, windmill.
-  * Dirt road leading out to fields and forest.
-  * NPCs: Shopkeeper, Quest Giver, Creature Trainer (tutorial).
-
-* **Wild Zone** – The surrounding countryside
-  * Tall grass fields for stealth and hiding.
-  * Cliffs and rocky outcrops for climbing.
-  * Small river or pond for visual variety.
-  * A few wild creatures roaming around.
+* Side-scrolling **Metroidvania controls**:
+  * Walk, run, jump, parkour, dodge roll, ladder climbing, small vaults over obstacles, wall climbing, dash.
 
 ---
 
-## **3. Core Gameplay Loop**
+### B. Combat System (Souls-like 2D)
+
+* **Player Stats**: Health, stamina, weapon damage.
+* **Combat Actions**:
+
+  * Light attack (fast, low stamina cost).
+  * Heavy attack (slow, higher stamina cost, staggers enemies).
+  * Dodge roll with i-frames.
+  * Block (optional for prototype, can be added later).
+* **Enemy AI**:
+
+  * Simple melee and ranged attacks.
+  * Telegraphing attack animations for dodge timing.
+* **Stamina System**:
+
+  * Attacks, rolls, and blocks consume stamina.
+  * Stamina regenerates slowly.
+
+### C. Creature System
+
+* **Creature Encounters**: Metroidvania-style 2D Souls-like real-time battles.
+
+* **3–4 starter wild creatures**:
+
+  * Each with basic attacks and a unique ability (combat or exploration).
+
+* **Catching Mechanic**:
+
+  * Weaken enemy → use capture item → creature joins your roster.
+
+* **Creature Swap**:
+
+  * Switch between player and creature in real-time (tag-team combat).
+  * Creature fights with same controls as player but has unique moves.
+
+* **Creature Utility Abilities**:
+
+  * Example: A burrowing creature that opens tunnels to shortcuts.
+
+### D. Boss Battle
+
+* **Mini-Boss**: Optional fight to introduce mechanics.
+* **Main Boss**: Stronger enemy with multiple attack phases.
+* Boss arena has environmental hazards to encourage mobility.
+
+---
+
+## 3. World Setting & Level Design
+
+* **Theme**: Countryside village + surrounding forest/farmland.
+* **Areas**:
+
+  * Safe village hub, wooden buildings, barns, windmill (NPCs, item shop).
+  * Forest with platforming sections and hidden paths.
+  * Farmland with roaming enemies and wild creatures to catch.
+  * Ruined barn (mini-boss arena).
+  * Cliffside area (main boss arena).
+
+* **Metroidvania structure**:
+
+  * Early paths blocked by obstacles.
+  * Require dash ability or specific creature’s help to proceed.
+  * Shortcuts unlock for backtracking.
+
+---
+
+## 4. Art & Assets
+
+* Temporary free assets (Itch.io, OpenGameArt, Kenney.nl).
+* Player sprite with:
+
+  * Idle, walk, jump, attack, dodge animations.
+* Creature sprites:
+
+  * Idle, attack, hit animations.
+* Simple background tilesets (village, forest, farmland).
+* Basic UI:
+
+  * Health + stamina bars.
+  * Creature roster display.
+
+---
+
+## 5. Core Gameplay Loop
 
 1. **Explore** the hub and countryside.
-2. **Spot a creature** → sneak up or approach.
+2. **Spot a creature** → approach.
 3. If close enough, **trigger battle mode**:
    * Camera shifts, player now controls their creature.
    * Souls-like real-time combat (dodge, light attack, heavy attack, special move).
+   * Battle area is limited in the encounter area environment.
 4. **Win the battle**:
    * Option to “catch” if creature’s health is low.
    * Caught creatures stored in inventory.
-5. Return to hub to **heal, train, and upgrade**.
+   * Option to run from battle. But the creature might chase after the player if they are still nearby.
+5. Return to home to **heal, train, and upgrade**.
 6. Repeat with harder creatures.
 
 ---
 
-## **4. Gameplay Systems for Prototype**
+## 6. Gameplay Systems
 
 ### A. Player (Human) Movement
 
@@ -78,52 +151,76 @@ Goal: A **small but complete gameplay loop** in one rural area with:
 
 ---
 
-## **5. Art & Atmosphere**
+## 7. Art & Atmosphere
 
 * Semi-realistic rural setting.
 * Dynamic weather: Sunny, cloudy, light rain.
-* Day/night cycle (slower for prototype).
 * Environmental sound: Birds, wind, distant animals.
 
 ---
 
-## **6. Step-by-Step Build Plan**
+## 8. Step-by-Step Development Roadmap
 
-### Phase 1 – Core Player Controls
+### Step 1 – Core Player Controls
 
-* Movement, sprint, vault, climb, stealth crouch.
-* Camera control.
+* Movement, dash, vault, climb, jump, dodge roll.
+* Camera follows player smoothly.
 
-### Phase 2 – Hub & Countryside Map
+### Step 2 – Map & Progression
 
-* Make a small 3D terrain with free foliage/props.
-* Place village buildings, dirt paths, grass patches.
+* Build small countryside level layout.
+* Add village hub and one explorable forest area.
+* Place barriers for locked areas.
 
-### Phase 3 – Creature System
+### Step 3 – Creature System
 
-* Add 1 test creature with idle/walk animations.
+* Add wild creature with idle/walk animations.
 * Make it roam in wild zone.
+* Simple capture mechanic.
+* Creature swap in combat.
 
-### Phase 4 – Battle Mode
+### Step 4 – Battle Mode
 
 * Switch control from player to creature.
-* Add lock-on, dodge, light/heavy attack.
-* Enemy AI: simple chase & attack.
+* Player attacks + stamina bar.
+* Add dodge, light/heavy attack.
+* Simple enemy AI with health.
 
-### Phase 5 – Catching & Inventory
+### Step 5 – Catching & Inventory
 
 * Catch system when HP < X%.
 * Store creature in basic UI list.
 
-### Phase 6 – Quest & Shop
+### Step 6 – Quest & Shop
 
 * One quest from NPC (defeat 1 wild creature).
 * Shop for healing items.
 
-### Phase 7 – Basic UI
+### Step 7 – Basic UI
 
 * Health/stamina bars.
 * Creature inventory list.
+
+### Step 8 – Boss Fight
+
+* Script mini-boss and main boss with patterns.
+* Add health bar UI for bosses.
+
+### Step 9 – Polish & Feedback
+
+* Add sound effects and placeholder music.
+* Add hit effects and screen shake.
+* Test gameplay loop: Explore → Fight → Catch → Progress → Boss.
+
+---
+
+### 9. Later Expansion Ideas (Post-Prototype)
+
+* More creatures with elemental types.
+* Creature evolutions and special attacks.
+* Larger interconnected regions (mountains, rivers, ruins).
+* Multiplayer PvP creature battles.
+* Better art & animation.
 
 ---
 
